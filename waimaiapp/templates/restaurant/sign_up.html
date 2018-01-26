@@ -7,8 +7,9 @@
 {% block content %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ user_form }}
-        {{ restaurant_form }}
-        <button type="submit" class="btn btn-pink">Sign Up</button>
+        {% bootstrap_form user_form %}
+        {% bootstrap_form restaurant_form %}
+        <button type="submit" class="btn btn-pink pull-right">Sign Up</button>
     </form>
+    <a href="{% url 'restaurant-sign-in' %}">Already have an account?</a>
 {% endblock %}
